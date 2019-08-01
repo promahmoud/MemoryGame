@@ -260,7 +260,7 @@ function resetTime() {
 function main_game() {
     cards.addEventListener('click', function (event) {
         card = event.target;
-        console.log(card);
+        
         if (card.className === 'card open show') {
             return;
         } else if (card.className == 'card' && num_of_card < 2) {
