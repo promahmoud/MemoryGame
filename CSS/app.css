@@ -1,0 +1,526 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+ul {
+    list-style: none;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100vh;
+
+}
+
+body {
+    zoom: 80%;
+    background: url('../Images/bg2.svg');
+}
+
+.container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+    /* background-color: #a4508b;
+    background-image: linear-gradient(326deg, #a4508b 0%, #5f0a87 74%);
+    background-color: #0cbaba;
+    background-image: linear-gradient(315deg, #0cbaba 0%, #380036 74%); */
+}
+
+.title h1 {
+    padding: 20px;
+    padding-bottom: 0;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 3em;
+    color: rgb(149, 31, 153);
+    text-shadow: 4px 5px 4px #6f0449
+}
+
+.status {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 25px;
+    text-transform: uppercase
+}
+
+.status .timer,
+.moves,
+.refresh,
+.stars,
+.cong-icon {
+    padding: 10px 20px;
+    box-shadow: 1px 1px 20px 2px #969292;
+    border-radius: 5px;
+    background: #3e1227;
+    color: #FFF;
+    margin: auto;
+    font-size: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.stars li {
+    display: inline-block;
+    color: yellow;
+    font-size: 23px;
+}
+
+.refresh {
+    transition: all .4s ease;
+    cursor: pointer;
+}
+
+.refresh:active {
+    transform: scale(1.2)
+}
+
+/**** For Modal *******/
+.custom-rating {
+    border-radius: 50%;
+    margin: 25px;
+}
+
+.swal2-title {
+    color: #191616 !important;
+    font-size: 1.975em !important;
+
+}
+
+.swal2-content {
+    color: #191616 !important;
+    font-size: 1.425em !important;
+}
+
+/*################# End Modal #################*/
+/* *******************Range for zoom******************* */
+.frame,
+.minus,
+.plus,
+.number {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.counter {
+    background: #3e1227;
+    width: 170px;
+    padding: .5em 0;
+    border-radius: 25px;
+    display: flex;
+    justify-content: space-around;
+    box-shadow: 1px 1px 20px rgba(0, 0, 0, .1);
+}
+
+.minus,
+.plus,
+.number {
+    background: #ad4cbe3f;
+    width: 30px;
+    height: 30px;
+    margin: 5px;
+    cursor: pointer;
+}
+
+.minus,
+.plus {
+    border-radius: 50%;
+}
+
+.minus:hover,
+.plus:hover {
+    transition: 1s;
+    transform: scale(1.4);
+    box-shadow: 1px 1px 3px 0 rgba(0, 0, 0, .5);
+}
+
+.minus:hover {
+    transition: 1s;
+    transform: scale(.8);
+    box-shadow: inset 1px 1px 5px 0 rgba(0, 0, 0, .3);
+}
+
+.number {
+    font-family: 'Kodchasan', sans-serif;
+    font-weight: 700;
+    font-size: 1em;
+    color: #fff;
+    color: #1ba057;
+}
+
+.minus .line,
+.plus .line-h,
+.plus .line-v {
+    background: #1ba057;
+    width: 15px;
+    height: 5px;
+    border-radius: 5px;
+    position: absolute;
+}
+
+.minus .line {
+    background: #c25050;
+}
+
+.line-v {
+    transform: rotate(90deg);
+}
+
+/* *******************EndRange for zoom******************* */
+/* ************* Theme setting  ************ */
+.theme-setting {
+    position: relative;
+}
+
+.cong-icon {
+    margin-left: 30px;
+    cursor: pointer;
+    transition: all .5s ease
+}
+
+.cong-icon:active {
+    transform: scale(1.2)
+}
+
+.arrow-img {
+    position: absolute;
+    top: -14px;
+    left: 111px;
+    width: 207px;
+    display: none;
+}
+
+.colors {
+    position: absolute;
+    width: 71px;
+    height: 174px;
+    top: 13px;
+    left: 316px;
+    background: #601f63;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    box-shadow: 1px 1px 20px 2px #969292;
+    border-radius: 15px;
+    -webkit-box-shadow: 5px 5px 0px 0px #622163,
+        10px 10px 0px 0px #69316a,
+        15px 15px 0px 0px #7b467d,
+        20px 20px 0px 0px #662669,
+        25px 25px 0px 0px #662869,
+        -7px -15px 9px -6px rgba(0, 0, 0, 0);
+    box-shadow: 5px 5px 0px 0px #622163,
+        10px 10px 0px 0px #69316a,
+        15px 15px 0px 0px #7b467d,
+        20px 20px 0px 0px #662669,
+        25px 25px 0px 0px #662869,
+        -7px -15px 9px -6px rgba(0, 0, 0, 0);
+    display: none;
+    transition: all .5s ease;
+}
+
+.colors li {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    box-shadow: 1px 1px 20px 2px #969292;
+    transition: all .5s ease;
+    cursor: pointer;
+}
+
+.colors li:hover {
+    transform: scale(1.4)
+}
+
+.bg1 {
+    background: url('../Images/bg1.jpg');
+    background-size: cover;
+}
+
+.bg2 {
+    background: url('../Images/bg2.svg');
+    background-color: #330033;
+}
+
+.bg3 {
+    background: url('../Images/bg3.svg');
+    background-color: #001d29;
+}
+
+.show-theme-setting {
+    display: flex !important;
+}
+
+.slide-in-fwd-top {
+    -webkit-animation: slide-in-fwd-top 0.4s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    animation: slide-in-fwd-top 0.4s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+.fade-in-left {
+    -webkit-animation: fade-in-left 0.6s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+    animation: fade-in-left 0.6s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+}
+
+/* ************* End Theme setting  ************ */
+.cards {
+    max-width: 655px;
+    background-color: #6b0f1a;
+    background-image: linear-gradient(315deg, #6b0f1a 0%, #b91372 74%);
+    margin: 20px;
+    padding-top: 3em;
+    padding-bottom: 3em;
+    border-radius: 10px;
+    box-shadow: 1px 1px 20px 2px #969292;
+    background-color: #e84393;
+    background-image: linear-gradient(315deg, #e84393 0%, #000000 74%);
+
+
+}
+
+.cards .card {
+    display: inline-block;
+    width: 120px;
+    height: 120px;
+    position: relative;
+    border-radius: 10px;
+    background: #009efd;
+    background: #074a71;
+    color: #FFF;
+    margin: 12px;
+    box-shadow: 1px 1px 20px 2px #969292;
+    cursor: pointer;
+    transform: rotateY(180deg);
+    font-size: 0px;
+    transition: all 0.5s ease;
+    background-color: #a4508b;
+    background-image: linear-gradient(326deg, #a4508b 0%, #5f0a87 74%);
+
+
+
+}
+
+.cards .card i {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: -webkit-linear-gradient(#f9c1b1, #fb8085);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.card.show {
+    font-size: 40px;
+}
+
+.card.open {
+    transform: rotateY(0);
+    background: #1cdb4f;
+    cursor: default;
+    background-color: #015d00;
+    background-image: linear-gradient(314deg, #015d00 0%, #04bf00 74%);
+}
+
+.card.match {
+    cursor: default;
+    font-size: 33px;
+    animation: popIn .7s;
+    background-color: #63a91f;
+    background-image: linear-gradient(314deg, #63a91f 0%, #1a512e 74%);
+
+}
+
+.card.dismatch {
+    cursor: default;
+    background: #f00;
+    font-size: 33px;
+    transform: rotate(20deg);
+}
+
+audio {
+    display: none;
+}
+
+/* ****************  Footer *************** */
+footer {
+    text-align: center;
+    color: #fff;
+    padding: 20px;
+    font-size: 25px;
+    text-shadow: 0 0 5px #FFF,
+        0 0 10px #FFF,
+        0 0 15px #FFF,
+        0 0 20px #49ff18,
+        0 0 30px #49FF18,
+        0 0 40px #49FF18,
+        0 0 55px #49FF18,
+        0 0 75px #49ff18,
+        2px 2px 2px rgba(206, 89, 55, 0);
+}
+
+/* ############ End footer ###########*/
+/* Animation for matching cards */
+
+@keyframes popIn {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.2);
+        background-color: #f2cf43;
+        background-image: linear-gradient(315deg, #f2cf43 0%, #19a186 74%);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+/**
+ * ----------------------------------------
+ * animation slide-in-fwd-top
+ * ----------------------------------------
+ */
+@-webkit-keyframes slide-in-fwd-top {
+    0% {
+        -webkit-transform: translateZ(-1400px) translateY(-800px);
+        transform: translateZ(-1400px) translateY(-800px);
+        opacity: 0;
+    }
+
+    100% {
+        -webkit-transform: translateZ(0) translateY(0);
+        transform: translateZ(0) translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slide-in-fwd-top {
+    0% {
+        -webkit-transform: translateZ(-1400px) translateY(-800px);
+        transform: translateZ(-1400px) translateY(-800px);
+        opacity: 0;
+    }
+
+    100% {
+        -webkit-transform: translateZ(0) translateY(0);
+        transform: translateZ(0) translateY(0);
+        opacity: 1;
+    }
+}
+
+/* ----------------------------------------------
+ * Generated by Animista on 2019-8-1 1:13:49
+ * w: http://animista.net, t: @cssanimista
+ * ---------------------------------------------- */
+
+/**
+ * ----------------------------------------
+ * animation fade-in-left
+ * ----------------------------------------
+ */
+@-webkit-keyframes fade-in-left {
+    0% {
+        -webkit-transform: translateX(-50px) rotate(180deg) scale(1.1);
+        transform: translateX(-50px) rotate(180deg) scale(1.1);
+        opacity: 0;
+    }
+
+    100% {
+        -webkit-transform: translateX(0) rotate(180deg) scale(1.1);
+        transform: translateX(0) rotate(180deg) scale(1.1);
+        opacity: 1;
+    }
+}
+
+@keyframes fade-in-left {
+    0% {
+        -webkit-transform: translateX(-50px) rotate(180deg) scale(1.1);
+        transform: translateX(-50px) rotate(180deg) scale(1.1);
+        opacity: 0;
+    }
+
+    100% {
+        -webkit-transform: translateX(0) rotate(180deg) scale(1.1);
+        transform: translateX(0) rotate(180deg) scale(1.1);
+        opacity: 1;
+    }
+}
+
+
+/*  Extra small devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px) {
+    .title h1 {
+        font-size: 2em;
+    }
+
+    .status {
+        margin: 21px 75px;
+        flex-direction: column;
+    }
+
+    .status .timer,
+    .moves,
+    .refresh,
+    .stars {
+        padding: 10px 3px;
+        background: #b55b5b;
+        color: #FFF;
+        letter-spacing: 1px;
+        box-shadow: 1px 1px 20px 2px #969292;
+        border-radius: 20px;
+        margin: 0;
+        margin-bottom: 10px;
+        font-size: unset;
+    }
+
+    .stars li {
+        font-size: 17px;
+    }
+
+    .custom-rating {
+        margin: 25px;
+    }
+
+    .cards .card {
+        width: 102px;
+        height: 102px;
+    }
+
+    .card.show {
+        font-size: 30px;
+    }
+
+    /* range to zoom */
+    .counter {
+        width: 160px;
+        padding: .3em 0;
+    }
+
+    /* Color Theme */
+    .cong-icon {
+        display: none;
+    }
+}
+
+/*  Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) and (max-width: 767.98px) {}
+
+/*  Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) and (max-width: 991.98px) {}
+
+/*  Large devices (desktops, 992px and up) */
+@media (min-width: 992px) and (max-width: 1199.98px) {}
+
+/* // Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {}
+
+
+/* Mahmoud Mostafa */
