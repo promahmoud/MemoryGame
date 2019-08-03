@@ -153,6 +153,7 @@ function match() {
     openingCards[0].className += ' match';
     openingCards[1].className += ' match';
     num_of_matchCard++;
+    correct.currentTime = 0;
     correct.play();
 }
 // function to dismatch
@@ -161,6 +162,7 @@ function dismatch() {
     setTimeout(function () {
         openingCards[0].className += ' dismatch';
         openingCards[1].className += ' dismatch';
+        error.currentTime = 0;
         error.play();
     }, 600);
     removeClass();
